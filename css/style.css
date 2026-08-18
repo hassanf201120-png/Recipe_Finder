@@ -1,0 +1,727 @@
+:root {
+    --primary-green: #3a8f16;
+    --dark-green: #01422b;
+    --light-green: #a3e086;
+    --cream: #fffaf2;
+    --white: #ffffff;
+    --text-dark: #222222;
+    --text-gray: #666666;
+    --text-light: #aebaa9;
+    --text-muted: #777777;
+    --rating-yellow: #f5b82e;
+    --danger: #dc3545;
+    --heart-red: #e85d5d;
+    --border-light: #eeeeee;
+    --footer-border: #2d3d29;
+    --shadow-small: 0 3px 12px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 3px 15px rgba(0, 0, 0, 0.08);
+    --shadow-large: 0 5px 20px rgba(0, 0, 0, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.navbar {
+    padding: 18px 0;
+}
+
+.navbar-brand {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.nav-link {
+    margin: 0 10px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--primary-green);
+}
+.navbar .nav-link {
+    position: relative;
+    transition: 0.3s;
+}
+
+.navbar .nav-link.active {
+    color: var(--primary-green) !important;
+    font-weight: bold;
+}
+
+.navbar .nav-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+
+    height: 3px;
+
+    background-color: var(--primary-green);
+
+    border-radius: 10px;
+}
+/* HOME PAGE */
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(rgba(255, 250, 242, 0.85),
+            rgba(255, 250, 242, 0.85)),
+        url("https://images.unsplash.com/photo-1498837167922-ddd27525d352") center / cover;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.hero h1 span {
+    color: var(--primary-green);
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-gray);
+    max-width: 600px;
+}
+
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin-top: 25px;
+}
+
+.search-box input {
+    height: 50px;
+    border-radius: 30px 0 0 30px;
+    padding-left: 20px;
+}
+
+.search-box button {
+    border-radius: 0 30px 30px 0;
+    padding: 0 30px;
+}
+
+.recipe-card,
+.category-card {
+    background-color: var(--white);
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: var(--shadow-small);
+
+    transition: 0.3s;
+}
+
+.recipe-card:hover,
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-card img,
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h5 {
+    font-weight: bold;
+}
+
+.rating {
+    color: var(--rating-yellow);
+}
+
+
+/* HOME PAGE - RANDOM MEAL */
+
+.random-meal {
+    background-color: var(--white);
+
+    padding: 40px;
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-medium);
+}
+
+.random-meal img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+
+/* 2. CATEGORY PAGE */
+
+.page-header {
+    padding: 70px 0 40px;
+}
+
+.page-header h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.page-header p {
+    color: var(--text-muted);
+    font-size: 18px;
+}
+
+.category-click {
+    cursor: pointer;
+    height: 100%;
+}
+
+.category-click img {
+    height: 220px;
+}
+
+.category-click .card-content {
+    min-height: 150px;
+}
+
+.category-click h4 {
+    margin-bottom: 10px;
+}
+
+.category-click:hover {
+    box-shadow: 0 8px 25px rgba(58, 143, 22, 0.20);
+}
+
+
+/* 3. SEARCH PAGE */
+
+.search-container {
+    background-color: var(--white);
+
+    padding: 25px;
+    border-radius: 15px;
+
+    box-shadow: var(--shadow-medium);
+}
+
+.search-container input,
+.search-container select {
+    height: 48px;
+}
+
+.search-container button {
+    height: 48px;
+}
+
+
+/* 4. DETAILS PAGE*/
+
+.details-image {
+    width: 100%;
+    max-height: 550px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-large);
+}
+
+#mealName {
+    font-size: 45px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.details-section {
+    margin-top: 60px;
+
+    padding: 35px;
+
+    background-color: var(--white);
+
+    border-radius: 20px;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.details-section h2 {
+    margin-bottom: 25px;
+}
+
+
+/*5. INGREDIENTS*/
+
+.ingredient-card {
+    background-color: var(--cream);
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.ingredient-card i {
+    color: var(--primary-green);
+}
+
+
+/* . INSTRUCTIONS */
+
+.instruction-step {
+    display: flex;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+.step-number {
+    min-width: 40px;
+    height: 40px;
+
+    background-color: var(--primary-green);
+    color: var(--white);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.instruction-step p {
+    margin: 5px 0;
+
+    line-height: 1.7;
+}
+
+.video-container {
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 56.25%;
+
+    height: 0;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+}
+
+.video-container iframe {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/*6. FAVORITES PAGE */
+
+.favorite-image {
+    position: relative;
+}
+
+.favorite-image img {
+    display: block;
+}
+
+.remove-favorite {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--white);
+    color: var(--danger);
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    transition: 0.2s;
+}
+
+.remove-favorite:hover {
+    transform: scale(1.1);
+}
+
+.empty-favorites {
+    background-color: var(--white);
+
+    padding: 70px 20px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.empty-favorites i {
+    font-size: 70px;
+
+    color: var(--danger);
+
+    margin-bottom: 20px;
+}
+
+.empty-favorites h3 {
+    margin-bottom: 10px;
+}
+
+
+/* 7. MEAL PLANNER */
+
+.planner-form {
+    background-color: var(--white);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+
+.day-card {
+    background-color: var(--white);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-medium);
+
+    min-height: 180px;
+}
+
+
+.day-title {
+    background-color: var(--dark-green);
+
+    color: var(--white);
+
+    padding: 15px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+.day-meals {
+    padding: 15px;
+}
+
+
+.planned-meal {
+    background-color: var(--cream);
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.planned-meal button {
+    border: none;
+
+    background: transparent;
+
+    color: var(--danger);
+
+    cursor: pointer;
+}
+
+.meal-view-btn {
+    border: none;
+
+    background: transparent;
+
+    color: var(--primary-green);
+
+    margin-right: 8px;
+
+    cursor: pointer;
+}
+
+.planned-meal button:hover {
+    transform: scale(1.1);
+}
+
+
+/* . FOOTER */
+
+.footer {
+    background-color: var(--dark-green);
+
+    color: #dce8d8;
+
+    margin-top: 80px;
+
+    padding-top: 55px;
+}
+
+
+.footer-logo {
+    color: var(--white);
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo i {
+    margin-right: 8px;
+}
+
+
+.footer-brand p {
+    color: var(--text-light);
+
+    line-height: 1.8;
+
+    max-width: 420px;
+}
+
+.footer-social {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    background-color: var(--light-green);
+
+    transform: translateY(-3px);
+}
+
+.footer-title {
+    color: var(--white);
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: var(--text-light);
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.footer-links a i {
+    color: #6fba4f;
+
+    margin-right: 7px;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+
+    padding-left: 5px;
+}
+
+.footer-feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+
+    color: var(--text-light);
+}
+
+.footer-feature i {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 8px;
+
+    color: #6fba4f;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--footer-border);
+
+    margin-top: 45px;
+
+    padding: 20px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    color: #849080;
+
+    font-size: 14px;
+}
+
+.footer-bottom i {
+    color: var(--heart-red);
+}
+
+
+/*. RESPONSIVE */
+
+@media (max-width: 767px) {
+
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+
+        margin: 5px 0;
+    }
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .page-header {
+        padding: 50px 0 30px;
+    }
+
+    .page-header h1 {
+        font-size: 36px;
+    }
+
+
+
+    #mealName {
+        font-size: 35px;
+    }
+
+    .details-section {
+        padding: 25px 20px;
+    }
+
+
+    .footer {
+        text-align: center;
+
+        padding-top: 40px;
+    }
+
+    .footer-brand p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+}
